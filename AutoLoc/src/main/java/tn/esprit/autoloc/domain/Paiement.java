@@ -12,16 +12,25 @@ import java.time.LocalDate;
 @Entity
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 public class Paiement {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long idPaiement;
-    BigDecimal montant;
-    LocalDate datePaiement;
+    private Long idPaiement;
+
+    @Column(nullable = false, precision = 10, scale = 2)
+    private BigDecimal montant;
+
+    @Column(nullable = false)
+    private LocalDate datePaiement;
+
     @Enumerated(EnumType.STRING)
-    ModePaiement modePaiement;
+    @Column(nullable = false, length = 20)
+    private ModePaiement modePaiement;
+
     @ManyToOne(fetch = FetchType.LAZY)
-    Contrat contrat;
+    @JoinColumn(name = "id_contrat", nullable = false)
+    private Contrat contrat;
 }

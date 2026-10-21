@@ -1,6 +1,6 @@
 package tn.esprit.autoloc.service;
 
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.autoloc.domain.Client;
 import tn.esprit.autoloc.repository.ClientRepository;
@@ -8,8 +8,8 @@ import tn.esprit.autoloc.repository.ClientRepository;
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
-public class IClientServiceImp implements IClientService {
+@AllArgsConstructor
+public class ClientService implements IClientService {
 
     private final ClientRepository clientRepository;
 

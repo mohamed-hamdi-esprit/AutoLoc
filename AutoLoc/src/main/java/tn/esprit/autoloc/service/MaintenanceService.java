@@ -1,6 +1,6 @@
 package tn.esprit.autoloc.service;
 
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.autoloc.domain.Maintenance;
 import tn.esprit.autoloc.repository.MaintenanceRepository;
@@ -8,8 +8,8 @@ import tn.esprit.autoloc.repository.MaintenanceRepository;
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
-public class IMaintenanceServiceImp implements IMaintenanceService {
+@AllArgsConstructor
+public class MaintenanceService implements IMaintenanceService {
 
     private final MaintenanceRepository maintenanceRepository;
 

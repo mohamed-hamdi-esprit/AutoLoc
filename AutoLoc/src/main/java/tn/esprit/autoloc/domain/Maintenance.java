@@ -14,13 +14,20 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Maintenance {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long idMaintenance;
-    LocalDate dateDebut;
-    LocalDate dateFin;
-    String description;
-    @ManyToOne(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
-    Vehicule vehicule;
+    private Long idMaintenance;
 
+    @Column(nullable = false)
+    private LocalDate dateDebut;
+
+    @Column(nullable = false)
+    private LocalDate dateFin;
+
+    @Column(length = 255)
+    private String description;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_vehicule", nullable = false)
+    private Vehicule vehicule;
 }

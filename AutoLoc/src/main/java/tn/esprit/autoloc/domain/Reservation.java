@@ -14,18 +14,29 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Reservation {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long idReservation;
-    LocalDate dateDebut;
-    LocalDate dateFin;
+    private Long idReservation;
+
+    @Column(nullable = false)
+    private LocalDate dateDebut;
+
+    @Column(nullable = false)
+    private LocalDate dateFin;
+
     @Enumerated(EnumType.STRING)
-    StatutReservation statut;
-    @OneToOne(fetch = FetchType.LAZY)
-    Contrat contrat;
-    @ManyToOne(fetch = FetchType.LAZY)
-    Client client;
+    @Column(nullable = false, length = 20)
+    private StatutReservation statut;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    Vehicule vehicule;
+    @JoinColumn(name = "id_client", nullable = false)
+    private Client client;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_vehicule", nullable = false)
+    private Vehicule vehicule;
+
+    @OneToOne(mappedBy = "reservation", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+    private Contrat contrat;
 }

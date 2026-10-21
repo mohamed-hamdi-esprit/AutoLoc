@@ -1,6 +1,6 @@
 package tn.esprit.autoloc.service;
 
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 import tn.esprit.autoloc.domain.Equipement;
 import tn.esprit.autoloc.repository.EquipementRepository;
@@ -8,8 +8,8 @@ import tn.esprit.autoloc.repository.EquipementRepository;
 import java.util.List;
 
 @Service
-@RequiredArgsConstructor
-public class IEquipementServiceImp implements IEquipementService {
+@AllArgsConstructor
+public class EquipementService implements IEquipementService {
 
     private final EquipementRepository equipementRepository;
 
