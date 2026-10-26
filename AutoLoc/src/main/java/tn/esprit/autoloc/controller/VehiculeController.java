@@ -9,7 +9,7 @@ import tn.esprit.autoloc.service.IVehiculeService;
 
 import java.util.List;
 
-// @Tag : Permet de regrouper ce contrôleur sous une section claire et lisible dans Swagger UI
+// @Tag : Permet de regrouper le contrôleur sous une section claire et lisible dans Swagger UI
 @Tag(name = "Gestion des Véhicules", description = "Endpoints pour la gestion complète des véhicules (Ajout, modification, affichage, suppression)")
 @RestController
 @AllArgsConstructor
