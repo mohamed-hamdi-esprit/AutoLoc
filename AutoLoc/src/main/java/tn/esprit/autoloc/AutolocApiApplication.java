@@ -4,6 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.boot.WebApplicationType;
+// run with http://localhost:8081/swagger-ui/index.html
 
 
 
